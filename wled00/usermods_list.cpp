@@ -250,6 +250,11 @@
   #include "../usermods/usermod_v2_RF433/usermod_v2_RF433.h"
 #endif
 
+#ifdef USERMOD_FLUIDNC
+  #include "../usermods/FluidNC/usermod_fluidnc.h"
+#endif
+
+
 void registerUsermods()
 {
 /*
@@ -485,5 +490,9 @@ void registerUsermods()
 
   #ifdef USERMOD_RF433
   UsermodManager::add(new RF433Usermod());
+  #endif
+
+  #ifdef USERMOD_FLUIDNC
+  UsermodManager::add(new FluidNcUsermod());
   #endif
 }
